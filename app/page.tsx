@@ -19,6 +19,7 @@ import {
   EMAIL,
   SOCIAL_LINKS,
 } from './data'
+import { ProgressiveBlurHover } from '@/components/ui/progressive--blur-use'
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -154,7 +155,7 @@ export default function Personal() {
           {PROJECTS.map((project) => (
             <div key={project.name} className="space-y-2">
               <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectVideo src={project.video} />
+                <ProgressiveBlurHover src={project.imageLink} alt={project.name} imageName={project.name} imageDesc={project.description} />
               </div>
               <div className="px-1">
                 <a
