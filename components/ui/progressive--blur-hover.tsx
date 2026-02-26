@@ -4,13 +4,15 @@ import { useState } from 'react';
 import { ProgressiveBlur } from './progress-blur';
 import { motion } from 'motion/react';
 
-export function ProgressiveBlurHover({src, alt, imageName, imageDesc}: {src: string, alt: string, imageName: string, imageDesc: string}) {
+export function ProgressiveBlurHover({src, alt, imageName, imageDesc}:Readonly<{src: string, alt: string, imageName: string, imageDesc: string}>) {
   const [isHover, setIsHover] = useState(false);
 
   return (
     <div
-      className='relative my-4 aspect-square h-[300px] overflow-hidden rounded-[4px]'
-      onMouseEnter={() => setIsHover(true)}
+      role='img'
+      aria-label='Description of the overall image'
+      className='relative my-4 aspect-square h-75 overflow-hidden rounded-sm'
+      onMouseEnter={() => setIsHover(true)} 
       onMouseLeave={() => setIsHover(false)}
     >
       <img
