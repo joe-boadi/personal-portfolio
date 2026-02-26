@@ -123,3 +123,72 @@ export const SOCIAL_LINKS: SocialLink[] = [
 ]
 
 export const EMAIL = 'joeboadi1@gmail.com'
+
+export const GALLERY_IMAGES = [
+  {
+    id: 'gallery1',
+    src: 'https://i.postimg.cc/9Qkhgjk6/photo_2026_02_26_00_44_57.jpg',
+    alt: 'In my former role at AmaliTech',
+    name: 'In my former role at AmaliTech',
+    desc: 'A time in the office, shot taken right after a morning stand-up at AmaliTech.',
+  },
+  {
+    id: 'gallery2',
+    src: 'https://i.postimg.cc/XYqWgv2S/photo_2026_02_26_00_44_42.jpg',
+    alt: 'My Home workstation',
+    name: 'My Home workstation',
+    desc: 'I take productivity seriously, and my home workstation is a reflection of that.',
+  },
+  {
+    id: 'gallery3',
+    src: 'https://i.postimg.cc/HkNgvCKT/photo_2026_02_26_00_45_12.jpg',
+    alt: 'Dinner party with my family',
+    name: 'Dinner party with my family',
+    desc: 'With a close friend, we had dinner party with our lovely family. Such a beautiful moment.',
+  },
+]
+
+export const GALLERY_IMAGES_PAGE = [
+  {
+    id: 'gallery1',
+    src: 'https://i.postimg.cc/9Qkhgjk6/photo_2026_02_26_00_44_57.jpg',
+    alt: 'In my former role at AmaliTech',
+    name: 'In my former role at AmaliTech',
+    desc: 'A time in the office, shot taken right after a morning stand-up at AmaliTech.',
+  },
+  {
+    id: 'gallery2',
+    src: 'https://i.postimg.cc/XYqWgv2S/photo_2026_02_26_00_44_42.jpg',
+    alt: 'My Home workstation',
+    name: 'My Home workstation',
+    desc: 'I take productivity seriously, and my home workstation is a reflection of that.',
+  },
+  {
+    id: 'gallery3',
+    src: 'https://i.postimg.cc/HkNgvCKT/photo_2026_02_26_00_45_12.jpg',
+    alt: 'Dinner party with my family',
+    name: 'Dinner party with my family',
+    desc: 'With a best friend, we had dinner party with our lovely family.',
+  },
+  {
+    id : 'gallery4',
+    src: 'https://i.postimg.cc/52yJmtPb/photo_2026_02_26_00_44_45.jpg',
+    alt: 'Just in the building of the main at AmaliTech',
+    name: 'Reporting to work at AmaliTech',
+    desc: 'I had a great time working with the team at AmaliTech, and I am grateful for the experience.',
+  },
+  {
+    id: 'gallery5',
+    src: 'https://i.postimg.cc/jS1b3r9T/photo_2026_02_26_00_45_09.jpg',
+    alt: 'Loved playing the keyboard',
+    name: 'Loved playing the keyboard',
+    desc: 'I have always loved music, and playing the keyboard is one of my favorite hobbies.',
+  },
+  {
+    id: 'gallery6',
+    src: 'https://i.postimg.cc/mgnspGqf/photo_2026_02_26_00_45_01.jpg',
+    alt: 'At one of the major gospel concerts in Ghana',
+    name: 'At one of the major gospel concerts in Ghana',
+    desc: 'I was at one of the major gospel concerts in Ghana, I was one of the main keyboardist.',
+  },
+]
