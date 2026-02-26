@@ -1,5 +1,5 @@
 'use client'
-import { AnimatedBackground } from '@/components/ui/animated-background'
+import { AnimatedBackground } from '@/components/ui'
 import { TextLoop } from '@/components/ui/text-loop'
 import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
 import { useTheme } from 'next-themes'

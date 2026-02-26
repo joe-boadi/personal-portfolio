@@ -167,6 +167,8 @@ function MorphingDialogContent({
           if (document.activeElement === lastFocusableElement) {
             event.preventDefault()
             firstFocusableElement.focus()
+          }else {
+            return
           }
         }
       }
