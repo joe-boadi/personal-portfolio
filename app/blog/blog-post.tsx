@@ -21,10 +21,11 @@ export default function BlogPost() {
             >
                 {BLOG_POSTS.map((blog) => (
                     <Link
-                        key={blog.uid}
-                        className="-mx-3 rounded-xl px-3 py-3 no-underline"
-                        href={blog.link}
-                        data-id={blog.uid}
+                      title={blog.title}
+                      key={blog.uid}
+                      className="-mx-3 rounded-xl px-3 py-3 no-underline"
+                      href={blog.link}
+                      data-id={blog.uid}
                     >
                         <div className="flex flex-col space-y-1">
                             <h4 className="font-normal dark:text-zinc-100">
@@ -53,6 +54,8 @@ export function CopyButton() {
 
   return (
     <button
+      aria-label="Button"
+      title="Copy URL"
       onClick={() => {
         setText('Copied')
         navigator.clipboard.writeText(currentUrl)

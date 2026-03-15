@@ -14,6 +14,8 @@ import {VARIANTS_CONTAINER,VARIANTS_SECTION, TRANSITION_SECTION }  from '@/lib/c
 export default function MainBody() {
     return (
         <motion.main
+            title='Main Page'
+            aria-labelledby='Main Page'
             className="space-y-24"
             variants={VARIANTS_CONTAINER}
             initial="hidden"
@@ -32,15 +34,16 @@ export default function MainBody() {
 function Contact(){
     return (
         <motion.section
+            title='Contacts'
             variants={VARIANTS_SECTION}
             transition={TRANSITION_SECTION}
         >
             <h3 className="mb-5 text-lg font-medium">Connect</h3>
             <p className="mb-5 text-zinc-600 dark:text-zinc-400">
             Feel free to contact me at{' '}
-            <a className="underline dark:text-zinc-300" href={`mailto:${EMAIL}`}>
+            <Link title={EMAIL} className="underline dark:text-zinc-300" href={`mailto:${EMAIL}`}>
                 {EMAIL}
-            </a>
+            </Link>
             </p>
             <div className="flex items-center justify-start space-x-3">
             {SOCIAL_LINKS.map((link) => (
@@ -55,16 +58,18 @@ function Contact(){
 function ProfessionalSummary(){
     return (
         <motion.section
+            title='Professional Summary'
+            aria-describedby='Professional Summary'
             variants={VARIANTS_SECTION}
             transition={TRANSITION_SECTION}
         >
             <div className="flex-1">
-            <p className="text-zinc-600 dark:text-zinc-400">
-                Since the purpose of software engineering is to control complexity, not to create it, 
-                as a software developer my goal is to create seamless, user-friendly applications 
-                that meets business needs and requirements while ensuring robust security measure 
-                leveraging on my expertise and all the tools available to me.
-            </p>
+                <p className="text-zinc-600 dark:text-zinc-400">
+                    Since the purpose of software engineering is to control complexity, not to create it, 
+                    as a software developer my goal is to create seamless, user-friendly applications 
+                    that meets business needs and requirements while ensuring robust security measure 
+                    leveraging on my expertise and all the tools available to me.
+                </p>
             </div>
         </motion.section>
     )
@@ -73,39 +78,42 @@ function ProfessionalSummary(){
 function WorkExperience() {
     return (
         <motion.section
+            title='Work Experience'
+            aria-describedby='Work Experience'
             variants={VARIANTS_SECTION}
             transition={TRANSITION_SECTION}
         >
             <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
             <div className="flex flex-col space-y-2">
             {WORK_EXPERIENCE.map((job) => (
-                <a
-                className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-px dark:bg-zinc-600/30"
-                href={job.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={job.id}
-                >
+                <Link
+                    className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-px dark:bg-zinc-600/30"
+                    href={job.link}
+                    title={job.title}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={job.id}
+                    >
                 <Spotlight
                     className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
                     size={64}
                 />
-                <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-                    <div className="relative flex w-full flex-row justify-between">
-                    <div>
-                        <h4 className="font-normal dark:text-zinc-100">
-                        {job.title}
-                        </h4>
-                        <p className="text-zinc-500 dark:text-zinc-400">
-                        {job.company}
-                        </p>
-                    </div>
-                    <p className="text-zinc-600 dark:text-zinc-400">
-                        {job.start} - {job.end}
-                    </p>
-                    </div>
+                    <div aria-labelledby={job.title} className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
+                        <div className="relative flex w-full flex-row justify-between">
+                            <div>
+                                <h4 className="font-normal dark:text-zinc-100">
+                                {job.title}
+                                </h4>
+                                <p className="text-zinc-500 dark:text-zinc-400">
+                                {job.company}
+                                </p>
+                            </div>
+                            <p className="text-zinc-600 dark:text-zinc-400">
+                                {job.start} - {job.end}
+                            </p>
+                        </div>
                 </div>
-                </a>
+                </Link>
             ))}
             </div>
         </motion.section>
@@ -115,25 +123,27 @@ function WorkExperience() {
 function SelectedProjects(){
   return (
     <motion.section
+        title='Selected Projects'
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
     >
         <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         {PROJECTS.map((project) => (
-            <div key={project.name} className="space-y-2">
-            <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
+            <div key={project.name} title={project.name} aria-labelledby={project.name} className="space-y-2">
+            <div title={project.name} className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
                 <ProgressiveBlurHover src={project.imageLink} alt={project.name} imageName={project.name} imageDesc={project.description} />
             </div>
             <div className="px-1">
-                <a
-                className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
-                href={project.link}
-                target="_blank"
+                <Link
+                    title={project.name}
+                    className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
+                    href={project.link}
+                    target="_blank"
                 >
                 {project.name}
                 <span className="absolute bottom-0.5 left-0 block h-px w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
-                </a>
+                </Link>
                 <p className="text-base text-zinc-600 dark:text-zinc-400">
                 {project.description}
                 </p>
@@ -148,21 +158,22 @@ function SelectedProjects(){
 function ShowCaseGallery() {
     return (
         <motion.section
+            title='Showcase Gallery'
             variants={VARIANTS_SECTION}
             transition={TRANSITION_SECTION}
         >
             <h3 className="mb-3 text-lg font-medium">Gallery</h3>
             <p className='mb-5 text-zinc-600 dark:text-zinc-400'>We don't remember days, but moments, and that the best memories are often made when no one is watching</p>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-            {GALLERY_IMAGES.map((image) => (
-                <TiltCard
-                key={image.id}
-                src={image.src}
-                alt={image.alt}
-                name={image.name}
-                desc={image.desc}
-                />
-            ))}
+            <div title='Gallery' className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+                {GALLERY_IMAGES.map((image) => (
+                    <TiltCard
+                    key={image.id}
+                    src={image.src}
+                    alt={image.alt}
+                    name={image.name}
+                    desc={image.desc}
+                    />
+                ))}
             </div>
             <div className='mt-4 p-3'>
             <MagneticSocialLink link="/gallery">
@@ -176,6 +187,7 @@ function ShowCaseGallery() {
 function SomeBlogDisplay() {
     return (
         <motion.section
+            title='Blog Posts'
             variants={VARIANTS_SECTION}
             transition={TRANSITION_SECTION}
         >
@@ -192,6 +204,7 @@ function SomeBlogDisplay() {
             >
                 {BLOG_POSTS.map((post) => (
                 <Link
+                    title={post.title}
                     key={post.uid}
                     className="-mx-3 rounded-xl px-3 py-3"
                     href={post.link}
@@ -222,9 +235,10 @@ function MagneticSocialLink({
 }>) {
     return (
         <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
-            <a
-            href={link}
-            className="group relative inline-flex shrink-0 items-center gap-px rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+            <Link
+                title='Social Link'
+                href={link}
+                className="group relative inline-flex shrink-0 items-center gap-px rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
             >
             {children}
             <svg
@@ -242,7 +256,7 @@ function MagneticSocialLink({
                 clipRule="evenodd"
                 ></path>
             </svg>
-            </a>
+            </Link>
         </Magnetic>
     )
 }

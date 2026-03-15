@@ -12,9 +12,10 @@ export function TiltCard({src, alt, name, desc}: Readonly<{src: string, alt: str
         <img
           src={src}
           alt={alt}
+          title={alt}
           className='h-48 w-full object-cover'
         />
-        <div className='p-2'>
+        <div aria-label={name} className='p-2'>
           <h1 className='font-mono leading-snug text-zinc-950 dark:text-zinc-50'>
             {name}
           </h1>

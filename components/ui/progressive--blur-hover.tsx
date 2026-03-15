@@ -16,6 +16,7 @@ export function ProgressiveBlurHover({src, alt, imageName, imageDesc}:Readonly<{
       onMouseLeave={() => setIsHover(false)}
     >
       <img
+        title={alt}
         src={src}
         alt={alt}
         className='absolute inset-0'
@@ -39,7 +40,7 @@ export function ProgressiveBlurHover({src, alt, imageName, imageDesc}:Readonly<{
         }}
         transition={{ duration: 0.2, ease: 'easeOut' }}
       >
-        <div className='flex flex-col items-start gap-0 px-5 py-4'>
+        <div aria-label={imageDesc} className='flex flex-col items-start gap-0 px-5 py-4'>
           <p className='text-base font-medium text-white'>{imageName}</p>
           <span className='text-base text-zinc-300'>{imageDesc}</span>
         </div>
