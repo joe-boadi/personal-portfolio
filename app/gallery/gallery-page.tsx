@@ -10,8 +10,10 @@ export default function GalleryPage(){
             variants={VARIANTS_CONTAINER}
             initial="hidden"
             animate="visible"
+            title="Gallery Page"
         >
             <motion.section
+                aria-label="Gallery Page"
                 variants={VARIANTS_SECTION}
                 transition={TRANSITION_SECTION}
             >

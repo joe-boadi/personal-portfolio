@@ -7,12 +7,14 @@ import Image from 'next/image'
 export function Header() {
   const pathname = usePathname()
   return (
-    <header className="mb-7 flex items-center justify-between">
+    <header aria-label='Header' className="mb-7 flex items-center justify-between">
       <div>
-        <Link href="/" className={`font-extrabold text-black dark:text-white ${pathname === '/' ? 'underline' : ''}`}>
+        <Link title='Home' href="/" className={`font-extrabold text-black dark:text-white ${pathname === '/' ? 'underline' : ''}`}>
           <Image 
             width={50} 
             height={50} 
+            title='Profile'
+            aria-atomic
             src="/profile.jpg" 
             priority
             alt="Profile Picture" 
@@ -30,8 +32,8 @@ export function Header() {
           Frontend Engineer
         </TextEffect>
         <div className="mt-2 flex items-center gap-4">
-          <Link href='/blog' className={`font-medium text-black dark:text-white ${pathname === '/blog' ? 'underline' : ''}`}>My Blogs</Link>
-          <Link href="/gallery" className={`font-medium text-black dark:text-white ${pathname === '/gallery' ? 'underline' : ''}`}>
+          <Link title='Blog' href='/blog' className={`font-medium text-black dark:text-white ${pathname === '/blog' ? 'underline' : ''}`}>My Blogs</Link>
+          <Link title='Gallery' href="/gallery" className={`font-medium text-black dark:text-white ${pathname === '/gallery' ? 'underline' : ''}`}>
             Gallery
           </Link>
         </div>
