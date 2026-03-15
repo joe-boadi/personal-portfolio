@@ -17,6 +17,7 @@ export function Header() {
             aria-atomic
             src="/profile.jpg" 
             priority
+            rel='prefetch'
             alt="Profile Picture" 
             className="rounded-full mr-2 inline-block" 
             /> 

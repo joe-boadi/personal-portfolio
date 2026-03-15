@@ -54,6 +54,7 @@ export function CopyButton() {
 
   return (
     <button
+      aria-label="Button"
       title="Copy URL"
       onClick={() => {
         setText('Copied')
